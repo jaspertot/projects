@@ -28,10 +28,14 @@ if __name__ == '__main__':
     z = int(input())
     n = int(input())
 
+#create an individual list based on the inputted number
 x_list = gen_list(x)
 y_list = gen_list(y)
 z_list = gen_list(z)
 
+#create a cartesian product from the created list
 permutations = list(its.product(x_list, y_list, z_list))
+
+#using list comprehension to retrieve permutations that are not equal to 'n'
 final_perm = [list(perm) for perm in permutations if sum(perm) != n]
 print(final_perm)
